@@ -1,0 +1,36 @@
+{
+  "name": "Unsee",
+  "description": "This extension is to protect you from shouldersurfers",
+  "version": "1",
+   "icons": {
+    "16": "assets/Private.png",
+    "48": "assets/Private.png",
+    "128": "assets/Private.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "*://*/*"
+  ],
+  "browser_action": {
+    "default_title": "ImageBlur",
+    "default_icon": "assets/Private.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2
+}

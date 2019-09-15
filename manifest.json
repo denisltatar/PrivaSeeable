@@ -1,0 +1,36 @@
+﻿{
+  	"name": "PrivaSeaable",
+	"version": "1.0",
+	"description": "Adds custom edits to text on screen to protect your privacy",
+	"manifest_version": 2,
+	"permissions": [
+		"activeTab",
+		"storage",
+		"tabs",
+		"*://*/*"
+	],
+	"browser_action":
+	{
+			"default_popup": "popup.html",
+			"default_icon":"PrivaSeeable2.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://*/*",
+				"https://*/*"
+			],
+			"js":[
+				"content.js",
+				"contentV.js"
+			],
+
+			"run_at":"document_start",
+			"run_at":"document_end"
+		}
+	],
+
+	"icons": {
+		"128":"PrivaSeeable2.png"
+	}
+}
